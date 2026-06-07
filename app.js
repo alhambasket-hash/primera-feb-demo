@@ -1533,11 +1533,15 @@ async function init() {
   bindControls();
   bindNewsAdmin();
   setAdminMode(false);
-  if (supabaseClient) {
-    const { data } = await supabaseClient.auth.getSession();
-    if (data.session && location.hash === "#admin") setAdminMode(true);
-  }
   routeFromHash();
+  if (supabaseClient) {
+    supabaseClient.auth
+      .getSession()
+      .then(({ data }) => {
+        if (data.session && location.hash === "#admin") setAdminMode(true);
+      })
+      .catch((error) => console.warn("No se pudo comprobar la sesion de Supabase", error));
+  }
   loadRemoteNews()
     .then(() => renderNews())
     .catch((error) => console.warn("No se pudieron cargar noticias de Supabase", error));
