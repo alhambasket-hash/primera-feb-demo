@@ -1460,6 +1460,112 @@ function renderClubDetail() {
   document.querySelector("[data-back-teams]").addEventListener("click", () => showView("equipos"));
 }
 
+function clubSlug(team) {
+  return team.name
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-|-$/g, "");
+}
+
+function renderClubsDirectory() {
+  const selectedClubs = teams.map((team) => {
+    const homeGames = allCalendarGames()
+      .filter((game) => game.home === team.short)
+      .sort((a, b) => `${a.date} ${a.time}`.localeCompare(`${b.date} ${b.time}`));
+    const nextHome = homeGames.find((game) => game.status !== "Final") || homeGames.at(-1);
+    const relatedNews = newsItems.find((item) => item.team === team.short);
+    const slug = clubSlug(team);
+    return { team, nextHome, relatedNews, slug };
+  });
+
+  $("#clubsDirectory").innerHTML = `
+    <div class="clubs-hero">
+      <div class="club-copy">
+        <p class="eyebrow">Guia institucional</p>
+        <h2>Clubes Primera FEB</h2>
+        <p>
+          Espacio pensado para que cada entidad tenga una ficha propia: identidad,
+          pabellon, contacto, redes, noticias y proximos partidos en casa.
+        </p>
+      </div>
+      <div class="permission-grid">
+        <article>
+          <strong>Material oficial</strong>
+          <span>Escudo, fotos, pabellon y recursos de prensa validados por cada club.</span>
+        </article>
+        <article>
+          <strong>Contacto directo</strong>
+          <span>Responsable de comunicacion, web oficial, entradas y redes sociales.</span>
+        </article>
+        <article>
+          <strong>Contenido vivo</strong>
+          <span>Noticias del club, partidos en casa y datos institucionales actualizables.</span>
+        </article>
+        <article>
+          <strong>Control del club</strong>
+          <span>Correcciones, retirada de imagenes y aprobacion de material sensible.</span>
+        </article>
+      </div>
+    </div>
+
+    <div class="clubs-toolbar">
+      <strong>${teams.length} clubes</strong>
+      <span>Temporada 2025/26 Â· demo no oficial</span>
+    </div>
+
+    <div class="institutional-grid">
+      ${selectedClubs
+        .map(({ team, nextHome, relatedNews, slug }) => {
+          const gameLabel = nextHome
+            ? `${nextHome.date} Â· ${nextHome.status === "Final" ? `${nextHome.homeScore}-${nextHome.awayScore}` : nextHome.time}`
+            : "Sin partido asignado";
+          const rival = nextHome ? byShort(nextHome.away) : null;
+          return `
+            <article class="institution-card" style="--club-main:${team.colors[0]};--club-accent:${team.colors[1]}">
+              <header>
+                ${teamMark(team)}
+                <div>
+                  <span class="meta">${team.city}</span>
+                  <h3>${team.name}</h3>
+                </div>
+              </header>
+              <div class="club-info-list">
+                <div><span>Pabellon</span><strong>${team.arena}</strong></div>
+                <div><span>Entrenador</span><strong>${team.coach}</strong></div>
+                <div><span>Contacto prensa</span><strong>prensa@${slug}.club</strong></div>
+                <div><span>Web</span><strong>${slug}.club</strong></div>
+              </div>
+              <div class="home-game-mini">
+                <span>Proximo en casa</span>
+                <strong>${rival ? `${team.short} vs ${rival.short}` : "Pendiente"}</strong>
+                <em>${gameLabel}</em>
+              </div>
+              <div class="club-news-mini">
+                <span>Noticia vinculada</span>
+                <strong>${relatedNews ? relatedNews.title : "Espacio disponible para comunicacion del club"}</strong>
+              </div>
+              <div class="institution-actions">
+                <a href="#equipo-${team.id}" data-club-open="${team.id}">Ficha deportiva</a>
+                <a href="#noticias">Noticias</a>
+                <a href="#calendario">Calendario</a>
+              </div>
+            </article>
+          `;
+        })
+        .join("")}
+    </div>
+  `;
+
+  document.querySelectorAll("[data-club-open]").forEach((link) => {
+    link.addEventListener("click", (event) => {
+      event.preventDefault();
+      openTeamDetail(link.dataset.clubOpen);
+    });
+  });
+}
+
 function renderStats() {
   const statLabels = { points: "pts", rebounds: "reb", assists: "ast" };
   const sorted = [...players].sort((a, b) => b[selectedStat] - a[selectedStat]).slice(0, 9);
@@ -1527,6 +1633,7 @@ async function init() {
   renderTeams();
   renderTeamProfile();
   renderClubDetail();
+  renderClubsDirectory();
   renderNewsTeamOptions();
   renderNews();
   renderStats();
