@@ -1527,7 +1527,6 @@ async function init() {
   renderClubDetail();
   renderNewsTeamOptions();
   renderNews();
-  await loadRemoteNews();
   renderStats();
   bindControls();
   bindNewsAdmin();
@@ -1537,6 +1536,9 @@ async function init() {
     if (data.session && location.hash === "#admin") setAdminMode(true);
   }
   routeFromHash();
+  loadRemoteNews()
+    .then(() => renderNews())
+    .catch((error) => console.warn("No se pudieron cargar noticias de Supabase", error));
 }
 
 init();
