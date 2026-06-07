@@ -1,0 +1,38 @@
+name: Deploy demo site
+
+on:
+  push:
+    branches: ["main"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build Supabase config
+        run: |
+          cat > supabase-config.js <<'EOF'
+          window.PRIMERA_FEB_SUPABASE = {
+            url: "${{ secrets.SUPABASE_URL }}",
+            anonKey: "${{ secrets.SUPABASE_ANON_KEY }}",
+          };
+          EOF
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+      - id: deployment
+        uses: actions/deploy-pages@v4
