@@ -1551,9 +1551,7 @@ body:not(.is-admin) .news-layout {
 }
 
 .clubs-section {
-  display: grid;
-  grid-template-columns: 0.75fr 1.25fr;
-  gap: 26px;
+  display: block;
   padding: 26px;
   margin-bottom: 48px;
   box-shadow: none;
@@ -1582,6 +1580,140 @@ body:not(.is-admin) .news-layout {
 .permission-grid span {
   color: var(--muted);
   line-height: 1.45;
+}
+
+.clubs-directory {
+  display: grid;
+  gap: 22px;
+}
+
+.clubs-hero {
+  display: grid;
+  grid-template-columns: 0.75fr 1.25fr;
+  gap: 26px;
+  align-items: start;
+}
+
+.clubs-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 14px 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.clubs-toolbar strong {
+  color: var(--navy);
+  font-size: 22px;
+}
+
+.clubs-toolbar span {
+  color: var(--muted);
+  font-weight: 800;
+}
+
+.institutional-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.institution-card {
+  display: grid;
+  gap: 16px;
+  min-height: 440px;
+  padding: 18px;
+  border: 1px solid var(--line);
+  border-top: 5px solid var(--club-main);
+  border-radius: 8px;
+  background: #fff;
+}
+
+.institution-card header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.institution-card .team-mark {
+  width: 58px;
+  height: 58px;
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--club-accent), transparent 72%);
+}
+
+.institution-card h3 {
+  margin: 4px 0 0;
+  color: var(--navy);
+  font-size: 20px;
+  line-height: 1.15;
+}
+
+.club-info-list {
+  display: grid;
+  gap: 8px;
+}
+
+.club-info-list div,
+.home-game-mini,
+.club-news-mini {
+  display: grid;
+  gap: 4px;
+  padding: 11px 12px;
+  border-radius: 8px;
+  background: var(--soft);
+}
+
+.club-info-list span,
+.home-game-mini span,
+.club-news-mini span {
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.club-info-list strong,
+.home-game-mini strong,
+.club-news-mini strong {
+  color: var(--ink);
+  font-size: 14px;
+}
+
+.home-game-mini {
+  border-left: 4px solid var(--club-main);
+}
+
+.home-game-mini em {
+  color: var(--muted);
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 800;
+}
+
+.institution-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: auto;
+}
+
+.institution-actions a {
+  min-height: 36px;
+  padding: 8px 10px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  color: var(--navy);
+  background: #fff;
+  font-size: 13px;
+  font-weight: 900;
+}
+
+.institution-actions a:first-child {
+  color: #fff;
+  border-color: var(--club-main);
+  background: var(--club-main);
 }
 
 .footer {
@@ -1620,10 +1752,12 @@ body:not(.is-admin) .news-layout {
   .split-section,
   .profile-body,
   .clubs-section,
+  .clubs-hero,
   .news-layout,
   .club-hero,
   .club-summary-grid,
-  .club-bottom-grid {
+  .club-bottom-grid,
+  .institutional-grid {
     grid-template-columns: 1fr;
   }
 
@@ -1640,7 +1774,8 @@ body:not(.is-admin) .news-layout {
   }
 
   .team-grid,
-  .stats-grid {
+  .stats-grid,
+  .institutional-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
@@ -1720,7 +1855,8 @@ body:not(.is-admin) .news-layout {
   .story-grid,
   .club-kpi-row,
   .club-roster-grid,
-  .club-stat-table {
+  .club-stat-table,
+  .institutional-grid {
     grid-template-columns: 1fr;
   }
 
