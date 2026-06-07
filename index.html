@@ -301,5 +301,33 @@
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script src="supabase-config.js?v=2"></script>
     <script src="app.js?v=26"></script>
+    <script>
+      (() => {
+        const views = ["inicio", "clasificacion", "calendario", "equipos", "noticias", "estadisticas", "clubes"];
+        const route = () => {
+          const view = views.includes(location.hash.slice(1)) ? location.hash.slice(1) : "inicio";
+          document.querySelectorAll("[data-view]").forEach((section) => {
+            const active = section.dataset.view === view;
+            section.classList.toggle("active", active);
+            section.style.display = active ? "" : "none";
+          });
+          document.querySelectorAll("[data-view-link]").forEach((link) => {
+            link.classList.toggle("active", link.dataset.viewLink === view);
+          });
+        };
+        document.querySelectorAll('a[href^="#"]').forEach((link) => {
+          const view = link.getAttribute("href").slice(1);
+          if (!views.includes(view)) return;
+          link.addEventListener("click", (event) => {
+            event.preventDefault();
+            if (location.hash === `#${view}`) route();
+            else location.hash = view;
+          });
+        });
+        window.addEventListener("hashchange", route);
+        window.addEventListener("load", route);
+        route();
+      })();
+    </script>
   </body>
 </html>
