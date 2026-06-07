@@ -71,7 +71,7 @@ const teams = [
   },
   {
     id: "palencia",
-    name: "Súper Agropal Palencia",
+    name: "SÃºper Agropal Palencia",
     short: "PAL",
     city: "Palencia",
     arena: "Pabellon Municipal de Palencia",
@@ -127,7 +127,7 @@ const teams = [
   },
   {
     id: "coruna",
-    name: "Leyma Coruña",
+    name: "Leyma CoruÃ±a",
     short: "COR",
     city: "A Coruna",
     arena: "Palacio de los Deportes",
@@ -172,7 +172,7 @@ const teams = [
     name: "Alimerka Oviedo Baloncesto",
     short: "OVI",
     city: "Oviedo",
-    arena: "Pumarín",
+    arena: "PumarÃ­n",
     coach: "Javi Rodriguez",
     colors: ["#1b75bb", "#f2c94c"],
     wins: 18,
@@ -251,7 +251,7 @@ const players = [
   ["Sergio Garcia", "GIP", "Base", 12.1, 2.9, 5.2],
   ["Atoumane Diagne", "ZAM", "Pivot", 10.7, 9.6, 1.1],
   ["Pablo Ferreiro", "OUR", "Alero", 11.8, 4.4, 2.2],
-  ["Marc Peñarroya", "MEN", "Base", 10.6, 2.7, 4.5],
+  ["Marc PeÃ±arroya", "MEN", "Base", 10.6, 2.7, 4.5],
   ["Pau Isern", "MLP", "Escolta", 12.3, 2.8, 2.6],
   ["Lucas N'Guessan", "FIB", "Pivot", 11.2, 7.4, 1.0],
   ["Oliver Arteaga", "OVI", "Pivot", 12.9, 6.8, 1.3],
@@ -289,27 +289,27 @@ const games = officialCalendarData.split(";").map((row, index) => {
 });
 
 const playoffGames = [
-  { id: 1001, phase: "Playoffs", phaseKey: "playoffs", round: 1, label: "Cuartos · Serie A · Partido 1", date: "15/05/2026", time: "", home: "EST", away: "ALI", homeScore: 93, awayScore: 77, venue: "Movistar Academy Magarinos", status: "Final" },
-  { id: 1002, phase: "Playoffs", phaseKey: "playoffs", round: 1, label: "Cuartos · Serie A · Partido 2", date: "17/05/2026", time: "", home: "EST", away: "ALI", homeScore: 74, awayScore: 67, venue: "Movistar Academy Magarinos", status: "Final" },
-  { id: 1003, phase: "Playoffs", phaseKey: "playoffs", round: 1, label: "Cuartos · Serie A · Partido 3", date: "22/05/2026", time: "", home: "ALI", away: "EST", homeScore: 72, awayScore: 113, venue: "Pedro Ferrandiz", status: "Final" },
-  { id: 1004, phase: "Playoffs", phaseKey: "playoffs", round: 2, label: "Cuartos · Serie B · Partido 1", date: "15/05/2026", time: "", home: "COR", away: "MEN", homeScore: 93, awayScore: 73, venue: "Coliseum da Coruña", status: "Final" },
-  { id: 1005, phase: "Playoffs", phaseKey: "playoffs", round: 2, label: "Cuartos · Serie B · Partido 2", date: "17/05/2026", time: "", home: "COR", away: "MEN", homeScore: 81, awayScore: 76, venue: "Coliseum da Coruña", status: "Final" },
-  { id: 1006, phase: "Playoffs", phaseKey: "playoffs", round: 2, label: "Cuartos · Serie B · Partido 3", date: "22/05/2026", time: "", home: "MEN", away: "COR", homeScore: 85, awayScore: 82, venue: "Pavello Menorca", status: "Final" },
-  { id: 1007, phase: "Playoffs", phaseKey: "playoffs", round: 2, label: "Cuartos · Serie B · Partido 4", date: "24/05/2026", time: "", home: "MEN", away: "COR", homeScore: 76, awayScore: 87, venue: "Pavello Menorca", status: "Final" },
-  { id: 1008, phase: "Playoffs", phaseKey: "playoffs", round: 3, label: "Cuartos · Serie C · Partido 1", date: "15/05/2026", time: "", home: "PAL", away: "FUE", homeScore: 90, awayScore: 52, venue: "Pabellon Municipal de Palencia", status: "Final" },
-  { id: 1009, phase: "Playoffs", phaseKey: "playoffs", round: 3, label: "Cuartos · Serie C · Partido 2", date: "17/05/2026", time: "", home: "PAL", away: "FUE", homeScore: 83, awayScore: 79, venue: "Pabellon Municipal de Palencia", status: "Final" },
-  { id: 1010, phase: "Playoffs", phaseKey: "playoffs", round: 3, label: "Cuartos · Serie C · Partido 3", date: "22/05/2026", time: "", home: "FUE", away: "PAL", homeScore: 88, awayScore: 81, venue: "Fernando Martin", status: "Final" },
-  { id: 1011, phase: "Playoffs", phaseKey: "playoffs", round: 3, label: "Cuartos · Serie C · Partido 4", date: "24/05/2026", time: "", home: "FUE", away: "PAL", homeScore: 78, awayScore: 72, venue: "Fernando Martin", status: "Final" },
-  { id: 1012, phase: "Playoffs", phaseKey: "playoffs", round: 3, label: "Cuartos · Serie C · Partido 5", date: "30/05/2026", time: "", home: "PAL", away: "FUE", homeScore: 76, awayScore: 51, venue: "Pabellon Municipal de Palencia", status: "Final" },
-  { id: 1013, phase: "Playoffs", phaseKey: "playoffs", round: 4, label: "Cuartos · Serie D · Partido 1", date: "15/05/2026", time: "", home: "GIP", away: "OVI", homeScore: 79, awayScore: 93, venue: "Angulas Aguinaga Arena", status: "Final" },
-  { id: 1014, phase: "Playoffs", phaseKey: "playoffs", round: 4, label: "Cuartos · Serie D · Partido 2", date: "17/05/2026", time: "", home: "GIP", away: "OVI", homeScore: 75, awayScore: 83, venue: "Angulas Aguinaga Arena", status: "Final" },
-  { id: 1015, phase: "Playoffs", phaseKey: "playoffs", round: 4, label: "Cuartos · Serie D · Partido 3", date: "22/05/2026", time: "", home: "OVI", away: "GIP", homeScore: 82, awayScore: 75, venue: "Pumarín", status: "Final" },
+  { id: 1001, phase: "Playoffs", phaseKey: "playoffs", round: 1, label: "Cuartos Â· Serie A Â· Partido 1", date: "15/05/2026", time: "", home: "EST", away: "ALI", homeScore: 93, awayScore: 77, venue: "Movistar Academy Magarinos", status: "Final" },
+  { id: 1002, phase: "Playoffs", phaseKey: "playoffs", round: 1, label: "Cuartos Â· Serie A Â· Partido 2", date: "17/05/2026", time: "", home: "EST", away: "ALI", homeScore: 74, awayScore: 67, venue: "Movistar Academy Magarinos", status: "Final" },
+  { id: 1003, phase: "Playoffs", phaseKey: "playoffs", round: 1, label: "Cuartos Â· Serie A Â· Partido 3", date: "22/05/2026", time: "", home: "ALI", away: "EST", homeScore: 72, awayScore: 113, venue: "Pedro Ferrandiz", status: "Final" },
+  { id: 1004, phase: "Playoffs", phaseKey: "playoffs", round: 2, label: "Cuartos Â· Serie B Â· Partido 1", date: "15/05/2026", time: "", home: "COR", away: "MEN", homeScore: 93, awayScore: 73, venue: "Coliseum da CoruÃ±a", status: "Final" },
+  { id: 1005, phase: "Playoffs", phaseKey: "playoffs", round: 2, label: "Cuartos Â· Serie B Â· Partido 2", date: "17/05/2026", time: "", home: "COR", away: "MEN", homeScore: 81, awayScore: 76, venue: "Coliseum da CoruÃ±a", status: "Final" },
+  { id: 1006, phase: "Playoffs", phaseKey: "playoffs", round: 2, label: "Cuartos Â· Serie B Â· Partido 3", date: "22/05/2026", time: "", home: "MEN", away: "COR", homeScore: 85, awayScore: 82, venue: "Pavello Menorca", status: "Final" },
+  { id: 1007, phase: "Playoffs", phaseKey: "playoffs", round: 2, label: "Cuartos Â· Serie B Â· Partido 4", date: "24/05/2026", time: "", home: "MEN", away: "COR", homeScore: 76, awayScore: 87, venue: "Pavello Menorca", status: "Final" },
+  { id: 1008, phase: "Playoffs", phaseKey: "playoffs", round: 3, label: "Cuartos Â· Serie C Â· Partido 1", date: "15/05/2026", time: "", home: "PAL", away: "FUE", homeScore: 90, awayScore: 52, venue: "Pabellon Municipal de Palencia", status: "Final" },
+  { id: 1009, phase: "Playoffs", phaseKey: "playoffs", round: 3, label: "Cuartos Â· Serie C Â· Partido 2", date: "17/05/2026", time: "", home: "PAL", away: "FUE", homeScore: 83, awayScore: 79, venue: "Pabellon Municipal de Palencia", status: "Final" },
+  { id: 1010, phase: "Playoffs", phaseKey: "playoffs", round: 3, label: "Cuartos Â· Serie C Â· Partido 3", date: "22/05/2026", time: "", home: "FUE", away: "PAL", homeScore: 88, awayScore: 81, venue: "Fernando Martin", status: "Final" },
+  { id: 1011, phase: "Playoffs", phaseKey: "playoffs", round: 3, label: "Cuartos Â· Serie C Â· Partido 4", date: "24/05/2026", time: "", home: "FUE", away: "PAL", homeScore: 78, awayScore: 72, venue: "Fernando Martin", status: "Final" },
+  { id: 1012, phase: "Playoffs", phaseKey: "playoffs", round: 3, label: "Cuartos Â· Serie C Â· Partido 5", date: "30/05/2026", time: "", home: "PAL", away: "FUE", homeScore: 76, awayScore: 51, venue: "Pabellon Municipal de Palencia", status: "Final" },
+  { id: 1013, phase: "Playoffs", phaseKey: "playoffs", round: 4, label: "Cuartos Â· Serie D Â· Partido 1", date: "15/05/2026", time: "", home: "GIP", away: "OVI", homeScore: 79, awayScore: 93, venue: "Angulas Aguinaga Arena", status: "Final" },
+  { id: 1014, phase: "Playoffs", phaseKey: "playoffs", round: 4, label: "Cuartos Â· Serie D Â· Partido 2", date: "17/05/2026", time: "", home: "GIP", away: "OVI", homeScore: 75, awayScore: 83, venue: "Angulas Aguinaga Arena", status: "Final" },
+  { id: 1015, phase: "Playoffs", phaseKey: "playoffs", round: 4, label: "Cuartos Â· Serie D Â· Partido 3", date: "22/05/2026", time: "", home: "OVI", away: "GIP", homeScore: 82, awayScore: 75, venue: "PumarÃ­n", status: "Final" },
 ];
 
 const finalFourGames = [
-  { id: 2001, phase: "Final Four", phaseKey: "final-four", round: 1, label: "Semifinal 1", date: "06/06/2026", time: "17:30", home: "COR", away: "PAL", homeScore: 92, awayScore: 81, venue: "Coliseum da Coruña", status: "Final" },
-  { id: 2002, phase: "Final Four", phaseKey: "final-four", round: 1, label: "Semifinal 2", date: "06/06/2026", time: "20:15", home: "EST", away: "OVI", homeScore: 79, awayScore: 71, venue: "Coliseum da Coruña", status: "Final" },
-  { id: 2003, phase: "Final Four", phaseKey: "final-four", round: 2, label: "Final", date: "07/06/2026", time: "19:00", home: "EST", away: "COR", homeScore: null, awayScore: null, venue: "Coliseum da Coruña", status: "Programado" },
+  { id: 2001, phase: "Final Four", phaseKey: "final-four", round: 1, label: "Semifinal 1", date: "06/06/2026", time: "17:30", home: "COR", away: "PAL", homeScore: 92, awayScore: 81, venue: "Coliseum da CoruÃ±a", status: "Final" },
+  { id: 2002, phase: "Final Four", phaseKey: "final-four", round: 1, label: "Semifinal 2", date: "06/06/2026", time: "20:15", home: "EST", away: "OVI", homeScore: 79, awayScore: 71, venue: "Coliseum da CoruÃ±a", status: "Final" },
+  { id: 2003, phase: "Final Four", phaseKey: "final-four", round: 2, label: "Final", date: "07/06/2026", time: "19:00", home: "EST", away: "COR", homeScore: null, awayScore: null, venue: "Coliseum da CoruÃ±a", status: "Programado" },
 ];
 const calendarPhases = [
   { key: "regular", label: "Liga Regular", games },
@@ -328,7 +328,7 @@ function currentCalendarGame() {
 function phaseRoundTitle(game = currentCalendarGame()) {
   if (!game) return "Calendario";
   if (game.phaseKey === "regular") return `Jornada ${game.round}`;
-  if (game.phaseKey === "playoffs") return game.label?.replace(/ · Partido \d+$/, "") || "Playoffs";
+  if (game.phaseKey === "playoffs") return game.label?.replace(/ Â· Partido \d+$/, "") || "Playoffs";
   return game.label || game.phase || "Final Four";
 }
 
@@ -336,7 +336,7 @@ function updateCurrentCompetitionLabels() {
   const game = currentCalendarGame();
   $("#currentCompetitionLabel").textContent = phaseRoundTitle(game);
   $("#currentCompetitionSub").textContent = game
-    ? `${game.phase || "Liga Regular"} · ${game.date}${game.time ? ` · ${game.time}` : ""}`
+    ? `${game.phase || "Liga Regular"} Â· ${game.date}${game.time ? ` Â· ${game.time}` : ""}`
     : "Resultados y proximos partidos";
   $("#featuredStageLabel").textContent = game?.phase || "Partido destacado";
   $("#featuredStatusLabel").textContent = game?.status || "";
@@ -427,8 +427,9 @@ let standingsMode = "general";
 const views = ["inicio", "clasificacion", "calendario", "equipos", "equipo", "noticias", "estadisticas", "clubes"];
 const newsStorageKey = "primeraFebDemoNews";
 window.PRIMERA_FEB_SUPABASE = window.PRIMERA_FEB_SUPABASE || {
-  url: "",
-  anonKey: "",
+  url: "https://dnqawcpopcslmazemrhz.supabase.co",
+  anonKey:
+    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImRucWF3Y3BvcGNzbG1hemVtcmh6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODA4MjAzMjQsImV4cCI6MjA5NjM5NjMyNH0.1I3-iiWJNdOs6m656TzTZg4AMP6t_UlK3x08-7WqI6I",
 };
 const supabaseSettings = window.PRIMERA_FEB_SUPABASE;
 const supabaseClient =
@@ -475,7 +476,7 @@ const defaultNews = [
   },
   {
     id: "n2",
-    title: "Leyma Coruña mantiene el pulso hasta la última jornada",
+    title: "Leyma CoruÃ±a mantiene el pulso hasta la Ãºltima jornada",
     tag: "Clasificacion",
     team: "COR",
     body: "La parte alta de la tabla deja una pelea muy igualada entre los grandes favoritos. Cada noticia puede asociarse a un equipo para reutilizar colores y escudo en la tarjeta.",
@@ -486,7 +487,7 @@ const defaultNews = [
     title: "La zona de playoff queda lista para las eliminatorias",
     tag: "Playoff",
     team: "PAL",
-    body: "Con la liga regular completada, la web puede destacar cruces, previas, líderes y fichas de partido desde una sección editorial gestionable.",
+    body: "Con la liga regular completada, la web puede destacar cruces, previas, lÃ­deres y fichas de partido desde una secciÃ³n editorial gestionable.",
     date: "09/05/2026",
   },
 ];
@@ -676,7 +677,7 @@ function renderMatchTicker() {
       const score = game.status === "Final" ? `${game.homeScore}-${game.awayScore}` : game.time;
       return `
         <a class="ticker-game" href="#calendario" data-ticker-game="${game.id}">
-          <strong>${game.date} · ${game.status}</strong>
+          <strong>${game.date} Â· ${game.status}</strong>
           <span class="ticker-teams">
             <span>${game.home}</span>
             <span class="ticker-score">${score}</span>
@@ -784,7 +785,7 @@ function bindNewsAdmin() {
       });
       supabaseAccessToken = auth.access_token;
     } catch (error) {
-      $("#loginStatus").textContent = "No se pudo entrar. Revisa email y contraseña.";
+      $("#loginStatus").textContent = "No se pudo entrar. Revisa email y contraseÃ±a.";
       return;
     }
     $("#loginStatus").textContent = "";
@@ -901,6 +902,17 @@ function showView(view, updateUrl = true) {
   window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
+function routeFromHash() {
+  const hash = location.hash.replace("#", "");
+  if (hash === "admin") {
+    requestAdminAccess();
+  } else if (hash.startsWith("equipo-")) {
+    openTeamDetail(hash.replace("equipo-", ""), false);
+  } else {
+    showView(hash, false);
+  }
+}
+
 function openTeamDetail(teamId, updateUrl = true) {
   if (!byId(teamId)) return;
   selectedTeamId = teamId;
@@ -929,7 +941,7 @@ function renderFeaturedGame() {
       <div class="score">${game.status === "Final" ? `${game.homeScore} - ${game.awayScore}` : game.time}</div>
       <div class="score-team">${teamMark(away)}<strong>${away.name}</strong><span class="meta">Visitante</span></div>
     </div>
-    <div class="detail-row"><span>${game.date} · ${game.time}</span><strong>${game.venue}</strong></div>
+    <div class="detail-row"><span>${game.date} Â· ${game.time}</span><strong>${game.venue}</strong></div>
   `;
   updateCurrentCompetitionLabels();
 }
@@ -1113,7 +1125,7 @@ function renderCalendar() {
   };
   const summaryTitle = () => {
     if (phase.key === "regular") return `Jornada ${selectedRound}`;
-    if (phase.key === "playoffs") return `Cuartos · Serie ${roundLabel(selectedRound)}`;
+    if (phase.key === "playoffs") return `Cuartos Â· Serie ${roundLabel(selectedRound)}`;
     if (phase.key === "final-four") return selectedRound === 1 ? "Semifinales" : "Final";
     return roundGames[0]?.label || phase.label;
   };
@@ -1140,7 +1152,7 @@ function renderCalendar() {
     </div>
     <div class="round-summary">
       <strong>${summaryTitle()}</strong>
-      <span>${roundGames.length ? `${roundGames.length} partido${roundGames.length === 1 ? "" : "s"} · ${roundGames[0]?.date || ""}` : "Calendario pendiente de publicación"}</span>
+      <span>${roundGames.length ? `${roundGames.length} partido${roundGames.length === 1 ? "" : "s"} Â· ${roundGames[0]?.date || ""}` : "Calendario pendiente de publicaciÃ³n"}</span>
     </div>
     <div class="round-games">
       ${roundGames.length ? roundGames.map((game) => {
@@ -1148,7 +1160,7 @@ function renderCalendar() {
       return `
         <article class="calendar-game ${game.id === selectedGameId ? "active" : ""}" data-game="${game.id}">
           <div>
-            <span class="meta">${phase.key === "regular" ? `Jornada ${game.round}` : game.label || phase.label} · ${game.date}</span>
+            <span class="meta">${phase.key === "regular" ? `Jornada ${game.round}` : game.label || phase.label} Â· ${game.date}</span>
             <strong>${byShort(game.home).name}</strong>
             <span class="muted"> vs ${byShort(game.away).name}</span>
           </div>
@@ -1285,7 +1297,7 @@ function renderTeamProfile() {
         ${teamMark(team)}
         <div>
           <h2>${team.name}</h2>
-          <p>${team.city} · ${team.arena}</p>
+          <p>${team.city} Â· ${team.arena}</p>
         </div>
       </div>
       <div class="profile-kpis">
@@ -1343,7 +1355,7 @@ function renderClubDetail() {
         <div>
           <span class="meta">Temporada 2025 - 2026</span>
           <h1>${team.name}</h1>
-          <p>${team.city} · ${team.arena}</p>
+          <p>${team.city} Â· ${team.arena}</p>
         </div>
       </div>
       <div class="club-actions">
@@ -1389,7 +1401,7 @@ function renderClubDetail() {
               <span class="avatar" style="--avatar-color:${team.colors[0]}"></span>
               <div>
                 <strong>${player.name}</strong>
-                <span>${player.position} · ${player.points.toFixed(1)} pts</span>
+                <span>${player.position} Â· ${player.points.toFixed(1)} pts</span>
               </div>
             </article>
           `)
@@ -1407,7 +1419,7 @@ function renderClubDetail() {
             const score = game.status === "Final" ? `${game.homeScore} - ${game.awayScore}` : game.time;
             return `
               <article class="club-game-row">
-                <span class="meta">J${game.round} · ${game.date}</span>
+                <span class="meta">J${game.round} Â· ${game.date}</span>
                 <strong>${byShort(game.home).name}</strong>
                 <span class="club-game-score">${score}</span>
                 <strong>${byShort(game.away).name}</strong>
@@ -1481,7 +1493,11 @@ function bindControls() {
     if (!views.includes(view)) return;
     link.addEventListener("click", (event) => {
       event.preventDefault();
-      showView(view);
+      if (location.hash === `#${view}`) {
+        showView(view, false);
+      } else {
+        location.hash = view;
+      }
     });
   });
   document.querySelectorAll("[data-stat]").forEach((button) => {
@@ -1492,16 +1508,8 @@ function bindControls() {
       renderStats();
     });
   });
-  window.addEventListener("popstate", () => {
-    const hash = location.hash.replace("#", "");
-    if (hash === "admin") {
-      requestAdminAccess();
-    } else if (hash.startsWith("equipo-")) {
-      openTeamDetail(hash.replace("equipo-", ""), false);
-    } else {
-      showView(hash, false);
-    }
-  });
+  window.addEventListener("hashchange", routeFromHash);
+  window.addEventListener("popstate", routeFromHash);
 }
 
 async function init() {
@@ -1528,14 +1536,7 @@ async function init() {
     const { data } = await supabaseClient.auth.getSession();
     if (data.session && location.hash === "#admin") setAdminMode(true);
   }
-  const hash = location.hash.replace("#", "");
-  if (hash === "admin") {
-    requestAdminAccess();
-  } else if (hash.startsWith("equipo-")) {
-    openTeamDetail(hash.replace("equipo-", ""), false);
-  } else {
-    showView(hash, false);
-  }
+  routeFromHash();
 }
 
 init();
