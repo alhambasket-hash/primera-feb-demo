@@ -891,7 +891,9 @@ function bindNewsAdmin() {
 function showView(view, updateUrl = true) {
   const nextView = views.includes(view) ? view : "inicio";
   document.querySelectorAll("[data-view]").forEach((section) => {
-    section.classList.toggle("active", section.dataset.view === nextView);
+    const isActive = section.dataset.view === nextView;
+    section.classList.toggle("active", isActive);
+    section.style.display = isActive ? "" : "none";
   });
   document.querySelectorAll("[data-view-link]").forEach((link) => {
     link.classList.toggle("active", link.dataset.viewLink === nextView);
