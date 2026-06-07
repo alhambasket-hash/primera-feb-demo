@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Primera FEB Demo</title>
-    <link rel="stylesheet" href="styles.css?v=15" />
+    <link rel="stylesheet" href="styles.css?v=16" />
   </head>
   <body>
     <header class="topbar">
@@ -263,33 +263,7 @@
       </section>
 
       <section id="clubes" class="section clubs-section view" data-view="clubes">
-        <div class="club-copy">
-          <p class="eyebrow">Para presentar a clubes</p>
-          <h2>Que se pediria para pasar de demo a web real</h2>
-          <p>
-            Esta demo usa identidades y retratos generados. La version final
-            necesitaria autorizacion de cada club para publicar escudo, fotos de
-            plantilla, pabellon y material de prensa.
-          </p>
-        </div>
-        <div class="permission-grid">
-          <article>
-            <strong>Material visual</strong>
-            <span>Escudo, fotos oficiales de jugadores, staff y pabellon.</span>
-          </article>
-          <article>
-            <strong>Uso permitido</strong>
-            <span>Web informativa no oficial, con atribucion y enlaces al club.</span>
-          </article>
-          <article>
-            <strong>Actualizacion</strong>
-            <span>Plantilla y fotos revisables por el departamento de comunicacion.</span>
-          </article>
-          <article>
-            <strong>Control</strong>
-            <span>Retirada o sustitucion de imagenes si el club lo solicita.</span>
-          </article>
-        </div>
+        <div id="clubsDirectory" class="clubs-directory"></div>
       </section>
     </main>
 
@@ -300,7 +274,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script src="supabase-config.js?v=2"></script>
-    <script src="app.js?v=26"></script>
+    <script src="app.js?v=27"></script>
     <script>
       (() => {
         const views = ["inicio", "clasificacion", "calendario", "equipos", "noticias", "estadisticas", "clubes"];
