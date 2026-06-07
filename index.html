@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Primera FEB Demo</title>
+    <link rel="stylesheet" href="styles.css?v=15" />
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="#inicio" aria-label="Primera FEB Demo">
+        <span class="brand-mark">PF</span>
+        <span>
+          <strong>Primera FEB</strong>
+          <small>Demo no oficial</small>
+        </span>
+      </a>
+      <nav class="nav" aria-label="Secciones">
+        <a class="nav-link active" href="#inicio" data-view-link="inicio">Inicio</a>
+        <a class="nav-link" href="#clasificacion" data-view-link="clasificacion">Clasificacion</a>
+        <a class="nav-link" href="#calendario" data-view-link="calendario">Calendario</a>
+        <a class="nav-link" href="#equipos" data-view-link="equipos">Equipos</a>
+        <a class="nav-link" href="#noticias" data-view-link="noticias">Noticias</a>
+        <a class="nav-link" href="#estadisticas" data-view-link="estadisticas">Stats</a>
+        <a class="nav-link" href="#clubes" data-view-link="clubes">Clubes</a>
+        <a class="user-access" href="#admin" aria-label="Acceso usuario" title="Acceso usuario">
+          <span aria-hidden="true">U</span>
+        </a>
+      </nav>
+    </header>
+
+    <section class="team-ribbon app-chrome" aria-label="Accesos rapidos a equipos">
+      <div id="teamRibbon" class="team-ribbon-track"></div>
+    </section>
+
+    <section class="match-strip app-chrome" aria-label="Marcadores de la jornada">
+      <div class="match-strip-title">
+        <strong id="currentCompetitionLabel">Calendario</strong>
+        <span id="currentCompetitionSub">Resultados y proximos partidos</span>
+      </div>
+      <div id="matchTicker" class="match-ticker"></div>
+    </section>
+
+    <main>
+      <div class="view active" data-view="inicio">
+      <section id="inicio" class="hero section portal-hero">
+        <article class="lead-story">
+          <span class="story-tag">Final Four</span>
+          <h1>La Primera FEB decide su semana grande</h1>
+          <p>
+            Un portal no oficial para seguir partidos, clubes, clasificacion,
+            estadisticas y protagonistas con una experiencia pensada para fans,
+            prensa y departamentos de comunicacion.
+          </p>
+          <div class="story-meta">
+            <span>Especial ascenso</span>
+            <span>Actualizado 12:30</span>
+          </div>
+        </article>
+        <aside class="live-board" aria-label="Panel destacado de jornada">
+          <div class="board-head">
+            <span id="featuredStageLabel">Partido destacado</span>
+            <strong id="featuredStatusLabel">Final</strong>
+          </div>
+          <div id="featuredGame" class="featured-game"></div>
+          <div class="mini-stats">
+            <span><strong>17</strong> equipos</span>
+            <span><strong>306</strong> partidos</span>
+            <span><strong>100%</strong> responsive</span>
+          </div>
+        </aside>
+      </section>
+
+      <section class="section stories-section" aria-label="Actualidad destacada">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">La actualidad</p>
+            <h2>Historias de la liga</h2>
+          </div>
+          <a class="text-link" href="#calendario">Ver partidos</a>
+        </div>
+        <div id="storyGrid" class="story-grid"></div>
+      </section>
+
+      <section class="section overview-grid" aria-label="Resumen">
+        <article class="summary-panel">
+          <h2>Ultimos resultados</h2>
+          <div id="recentResults" class="result-list"></div>
+        </article>
+        <article class="summary-panel">
+          <h2>Proximos partidos</h2>
+          <div id="nextGames" class="fixture-list"></div>
+        </article>
+        <article class="summary-panel accent-panel">
+          <h2>Lideres</h2>
+          <div id="leaders" class="leader-list"></div>
+        </article>
+      </section>
+      </div>
+
+      <section id="clasificacion" class="section view" data-view="clasificacion">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Temporada 2025/26</p>
+            <h2>Clasificacion</h2>
+          </div>
+          <div class="tabs" role="tablist" aria-label="Filtro de clasificacion">
+            <button class="tab active" type="button" data-standings-mode="general">General</button>
+            <button class="tab" type="button" data-standings-mode="home">Local</button>
+            <button class="tab" type="button" data-standings-mode="away">Visitante</button>
+          </div>
+        </div>
+        <div class="table-wrap">
+          <table class="standings-table">
+            <thead>
+              <tr>
+                <th>Pos</th>
+                <th>Equipo</th>
+                <th>PJ</th>
+                <th>G</th>
+                <th>P</th>
+                <th>PF</th>
+                <th>PC</th>
+                <th>Dif</th>
+                <th>Racha</th>
+              </tr>
+            </thead>
+            <tbody id="standingsBody"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="calendario" class="section split-section view" data-view="calendario">
+        <div>
+          <div class="section-head compact">
+            <div>
+              <p class="eyebrow">Partidos</p>
+              <h2>Calendario y resultados</h2>
+            </div>
+          </div>
+          <div id="calendarList" class="calendar-list"></div>
+        </div>
+        <aside class="match-detail" aria-label="Ficha de partido">
+          <div id="matchDetail"></div>
+        </aside>
+      </section>
+
+      <div class="view" data-view="equipos">
+      <section id="equipos" class="section">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Clubes</p>
+            <h2>Equipos</h2>
+          </div>
+          <label class="search-box">
+            <span>Buscar</span>
+            <input id="teamSearch" type="search" placeholder="Equipo o ciudad" />
+          </label>
+        </div>
+        <div id="teamGrid" class="team-grid"></div>
+      </section>
+
+      <section class="section team-profile-section">
+        <div id="teamProfile" class="team-profile"></div>
+      </section>
+      </div>
+
+      <section id="equipo" class="section view" data-view="equipo">
+        <div id="clubDetail" class="club-detail"></div>
+      </section>
+
+      <section id="noticias" class="section view" data-view="noticias">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Actualidad</p>
+            <h2>Noticias</h2>
+          </div>
+        </div>
+        <div class="news-layout">
+          <div>
+            <div id="newsList" class="news-list"></div>
+          </div>
+          <aside id="adminPanel" class="admin-panel">
+            <div id="loginPanel" class="login-panel">
+              <h3>Acceso admin</h3>
+              <form id="loginForm" class="news-form">
+                <label>
+                  Email
+                  <input id="adminEmail" type="email" autocomplete="email" required />
+                </label>
+                <label>
+                  Contraseña
+                  <input id="adminPassword" type="password" autocomplete="current-password" required />
+                </label>
+                <button class="button primary" type="submit">Entrar</button>
+                <span id="loginStatus" class="ai-status"></span>
+              </form>
+            </div>
+            <div id="editorPanel" class="editor-panel" hidden>
+            <div class="admin-title-row">
+              <h3>Editar noticia</h3>
+              <button id="logoutButton" class="button soft-button" type="button">Salir</button>
+            </div>
+            <form id="newsForm" class="news-form">
+              <input id="newsId" type="hidden" />
+              <label>
+                Titulo
+                <input id="newsTitle" type="text" required maxlength="90" />
+              </label>
+              <label>
+                Categoria
+                <input id="newsTag" type="text" required maxlength="24" />
+              </label>
+              <label>
+                Equipo
+                <select id="newsTeam"></select>
+              </label>
+              <label>
+                Texto
+                <textarea id="newsBody" required rows="7" maxlength="900"></textarea>
+              </label>
+              <div class="ai-box">
+                <strong>Gemini</strong>
+                <label>
+                  Tipo
+                  <select id="aiType">
+                    <option value="noticia">Noticia</option>
+                    <option value="previa">Prepartido</option>
+                    <option value="cronica">Postpartido</option>
+                  </select>
+                </label>
+                <label>
+                  Datos para la IA
+                  <textarea id="aiContext" rows="5" placeholder="Equipos, marcador, jugadores destacados, contexto..."></textarea>
+                </label>
+                <button id="generateNewsButton" class="button soft-button" type="button">Generar con Gemini</button>
+                <span id="aiStatus" class="ai-status"></span>
+              </div>
+              <div class="admin-actions">
+                <button class="button primary" type="submit">Guardar</button>
+                <button id="newNewsButton" class="button soft-button" type="button">Nueva</button>
+                <button id="deleteNewsButton" class="button danger-button" type="button">Borrar</button>
+              </div>
+            </form>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section id="estadisticas" class="section view" data-view="estadisticas">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Jugadores</p>
+            <h2>Rankings estadisticos</h2>
+          </div>
+          <div class="tabs stat-tabs" role="tablist" aria-label="Filtro estadistico">
+            <button class="tab active" type="button" data-stat="points">Puntos</button>
+            <button class="tab" type="button" data-stat="rebounds">Rebotes</button>
+            <button class="tab" type="button" data-stat="assists">Asistencias</button>
+          </div>
+        </div>
+        <div id="statsGrid" class="stats-grid"></div>
+      </section>
+
+      <section id="clubes" class="section clubs-section view" data-view="clubes">
+        <div class="club-copy">
+          <p class="eyebrow">Para presentar a clubes</p>
+          <h2>Que se pediria para pasar de demo a web real</h2>
+          <p>
+            Esta demo usa identidades y retratos generados. La version final
+            necesitaria autorizacion de cada club para publicar escudo, fotos de
+            plantilla, pabellon y material de prensa.
+          </p>
+        </div>
+        <div class="permission-grid">
+          <article>
+            <strong>Material visual</strong>
+            <span>Escudo, fotos oficiales de jugadores, staff y pabellon.</span>
+          </article>
+          <article>
+            <strong>Uso permitido</strong>
+            <span>Web informativa no oficial, con atribucion y enlaces al club.</span>
+          </article>
+          <article>
+            <strong>Actualizacion</strong>
+            <span>Plantilla y fotos revisables por el departamento de comunicacion.</span>
+          </article>
+          <article>
+            <strong>Control</strong>
+            <span>Retirada o sustitucion de imagenes si el club lo solicita.</span>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <span>Demo no oficial creada para solicitar autorizaciones de clubes.</span>
+      <span>Datos, logos y retratos son ficticios.</span>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="supabase-config.js?v=2"></script>
+    <script src="app.js?v=24"></script>
+  </body>
+</html>
